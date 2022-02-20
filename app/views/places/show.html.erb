@@ -8,14 +8,16 @@
    
   </ul>
 
-<h3>Contacts</h3>
+<h3>Posts</h3>
 
   <ul>
-  <% for post in @place.posts %>
-    <li>
-      <%= "#{post.title} %> <%= #{post.description} %> <%= #{post.posted_on} %> <%= #{post.place_id}" %>
-    </li>
-  <% end %>
+    <% for post in @place.posts %>
+      <li>
+        <%= "#{post.title}, #{post.description}, #{post.posted_on}" %>
+      </li>
+    <% end %>
   </ul>
 
- <p><a href= "/posts/new?place_id= <%= @place.id %>"> Add new post for this trip</a></p>
+ <p>
+    <a href= "/posts/new?place_id=<%= @place.id %> "> Add new post for this trip</a>
+  </p>
